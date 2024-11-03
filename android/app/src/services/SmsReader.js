@@ -154,7 +154,7 @@ const parseExpenseMessage = async (text, date) => {
     var log = logger.createLogger();
 
     log.debug("This is a Debug log");
-    const genAI = new GoogleGenerativeAI("AIzaSyDlSY0rL6wcZDsbMYTWB2hdVlfpWPiSx74");
+    const genAI = new GoogleGenerativeAI("API_KEY");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     const prompt = `Extract the following details from this list of SMS messages. Return each message as a JSON object with this schema:
