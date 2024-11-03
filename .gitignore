@@ -72,3 +72,45 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Node modules
+node_modules/
+
+# Metro, haste, and other cache files
+*.hmap
+.idea/
+.vscode/
+*.lock
+.env
+.expo/
+/coverage/
+
+# Android files
+android/app/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+android/app/debug.keystore
+
+# iOS files
+ios/Pods/
+ios/build/
+ios/.DS_Store
+ios/*.xcworkspace
+ios/*.lock
+ios/*.pbxuser
+ios/*.mode1v3
+ios/*.mode2v3
+ios/*.perspectivev3
+
+# Test and logs
+__tests__/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build artifacts
+*.hprof
+*.orig
+*.swp
+*.iml
