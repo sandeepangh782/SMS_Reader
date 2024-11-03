@@ -1,80 +1,69 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+Here’s the dependencies installation section without specifying the versions:
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+---
 
-## Step 1: Start the Metro Server
+### **Dependencies Installation**
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+To set up the project with the required dependencies, run the following commands in the terminal. These dependencies provide navigation, UI components, SMS reading, API requests, date management, and logging functionalities.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. **Install Core Dependencies**
 
-```bash
-# using npm
-npm start
+   Begin by installing the primary dependencies for React Native and React:
 
-# OR using Yarn
-yarn start
-```
+   ```bash
+   npm install react react-native
+   ```
 
-## Step 2: Start your Application
+2. **Install Project-Specific Libraries**
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+   Next, install the additional libraries needed for specific features in the project:
 
-### For Android
+   ```bash
+   npm install @google/generative-ai \
+     @react-native-masked-view/masked-view \
+     @react-navigation/native \
+     @react-navigation/stack \
+     axios \
+     date-fns \
+     react-native-gesture-handler \
+     react-native-get-sms-android \
+     react-native-logs \
+     react-native-safe-area-context \
+     react-native-screens \
+     react-native-vector-icons
+   ```
 
-```bash
-# using npm
-npm run android
+   Here is a brief explanation of what each dependency does:
 
-# OR using Yarn
-yarn android
-```
+   - **`@google/generative-ai`**: Integrates Google’s Generative AI API for extracting expense-related information from SMS content.
+   - **`@react-native-masked-view/masked-view`**: Provides masked views, enhancing UI customizability.
+   - **`@react-navigation/native` and `@react-navigation/stack`**: Core libraries for implementing navigation, allowing users to move between screens in the app.
+   - **`axios`**: HTTP client for making API requests.
+   - **`date-fns`**: Utility library for managing and formatting dates, essential for organizing expenses by month.
+   - **`react-native-gesture-handler`**: Adds gesture handling capabilities, enhancing UI interactions.
+   - **`react-native-get-sms-android`**: Enables SMS reading on Android, which is critical for fetching transaction data.
+   - **`react-native-logs`**: Logging library for debugging and event logging within the app.
+   - **`react-native-safe-area-context`**: Ensures UI components stay within the safe area on different devices.
+   - **`react-native-screens`**: Optimizes navigation performance by managing screens efficiently.
+   - **`react-native-vector-icons`**: Offers a set of customizable icons for UI design.
 
-### For iOS
+3. **Link Native Modules** (if required)
 
-```bash
-# using npm
-npm run ios
+   For React Native 0.60 and above, auto-linking should handle most cases. However, if additional steps are needed, refer to each library’s documentation.
 
-# OR using Yarn
-yarn ios
-```
+4. **Final Setup Steps**
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+   After installation, reset the cache and start the app:
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+   ```bash
+   npx react-native start --reset-cache
+   npx react-native run-android
+   ```
 
-## Step 3: Modifying your App
+---
 
-Now that you have successfully run the app, let's modify it.
+This setup will ensure that all necessary dependencies are correctly installed and configured for the app's features and functionality.
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
 # SMS_Reader
