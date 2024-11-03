@@ -103,7 +103,15 @@ After completing the setup, build and run the app on your physical device:
 npm run android
 ```
 
-This command will build and deploy the app on the connected Android device.
+This command will build and deploy the app on the connected Android device.If error is related to the Android SDK location not being found:
+1.Create a **local.properties** file in the Android folder, Open the **local.properties** file and add the  Android SDK path for me it was:
+**sdk.dir=/Users/YOUR_USERNAME/Library/Android/sdk**
+Save the file, clean the project:
+```bash
+cd ..  # Go back to project root
+cd android && ./gradlew clean && cd ..
+npm run android
+```
 
 ---
 
