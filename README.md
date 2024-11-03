@@ -1,31 +1,129 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-Here’s the dependencies installation section without specifying the versions:
+Here’s a README file based on your technical setup, guiding users on how to clone, configure, and run the project.
 
 ---
 
-### **Dependencies Installation**
+# ExpenseTrackerApp
 
-To set up the project with the required dependencies, run the following commands in the terminal. These dependencies provide navigation, UI components, SMS reading, API requests, date management, and logging functionalities.
+A standalone React Native app that reads SMS messages on a device to extract and categorize expense-related information, providing a simple and organized interface for tracking personal finances.
 
-1. **Install Core Dependencies**
+---
 
-   Begin by installing the primary dependencies for React Native and React:
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Installation](#installation)
+- [Project Setup](#project-setup)
+- [Running the Application](#running-the-application)
+- [Core Dependencies](#core-dependencies)
+- [License](#license)
+
+---
+
+## Getting Started
+
+This project uses React Native CLI instead of Expo due to its compatibility with native device features such as SMS reading. Follow the instructions below to set up and run the project on a local Android device.
+
+---
+
+## Installation
+
+### Prerequisites
+
+- **Node.js**: Ensure that Node.js is installed (preferably the latest stable version).
+- **Android Studio**: Install Android Studio along with the necessary CLI tools.
+- **Git**: Ensure Git is installed to clone the repository.
+
+---
+
+## Project Setup
+
+1. **Clone the Repository**
+
+   ```bash
+   git clone <your-repo-url>
+   cd ExpenseTrackerApp
+   ```
+
+2. **Install Node Modules**
+
+   Install all necessary dependencies using npm:
+
+   ```bash
+   npm install
+   ```
+
+3. **Android Studio CLI Configuration**
+
+   To enable Android Studio CLI tools to work with this project, configure the environment variables for the Android SDK:
+
+   Add the following lines to your shell configuration file (e.g., `~/.bashrc` or `~/.zshrc`):
+
+   ```bash
+   export ANDROID_HOME=$HOME/Library/Android/sdk
+   export PATH=$PATH:$ANDROID_HOME/emulator
+   export PATH=$PATH:$ANDROID_HOME/tools
+   export PATH=$PATH:$ANDROID_HOME/tools/bin
+   export PATH=$PATH:$ANDROID_HOME/platform-tools
+   ```
+
+   Then, refresh your terminal session:
+
+   ```bash
+   source ~/.bashrc  # or source ~/.zshrc
+   ```
+
+4. **Enable USB Debugging**
+
+   - On your Android device, enable Developer Options and enable **USB Debugging**.
+   - Connect your device via USB.
+
+5. **Verify Device Connection**
+
+   To confirm your device is connected and recognized by ADB, run:
+
+   ```bash
+   adb devices
+   ```
+
+   You should see an output similar to:
+
+   ```bash
+   List of devices attached
+   1234567abcdef device
+   ```
+
+---
+
+## Running the Application
+
+After completing the setup, build and run the app on your physical device:
+
+```bash
+npm run android
+```
+
+This command will build and deploy the app on the connected Android device.
+
+---
+
+## Core Dependencies
+
+The project uses several libraries to implement its core functionality. Here’s how to install the main dependencies:
+
+1. **React and React Native**:
 
    ```bash
    npm install react react-native
    ```
 
-2. **Install Project-Specific Libraries**
-
-   Next, install the additional libraries needed for specific features in the project:
+2. **Project-Specific Libraries**:
 
    ```bash
    npm install @google/generative-ai \
      @react-native-masked-view/masked-view \
      @react-navigation/native \
      @react-navigation/stack \
-     axios \
      date-fns \
      react-native-gesture-handler \
      react-native-get-sms-android \
@@ -35,35 +133,9 @@ To set up the project with the required dependencies, run the following commands
      react-native-vector-icons
    ```
 
-   Here is a brief explanation of what each dependency does:
-
-   - **`@google/generative-ai`**: Integrates Google’s Generative AI API for extracting expense-related information from SMS content.
-   - **`@react-native-masked-view/masked-view`**: Provides masked views, enhancing UI customizability.
-   - **`@react-navigation/native` and `@react-navigation/stack`**: Core libraries for implementing navigation, allowing users to move between screens in the app.
-   - **`axios`**: HTTP client for making API requests.
-   - **`date-fns`**: Utility library for managing and formatting dates, essential for organizing expenses by month.
-   - **`react-native-gesture-handler`**: Adds gesture handling capabilities, enhancing UI interactions.
-   - **`react-native-get-sms-android`**: Enables SMS reading on Android, which is critical for fetching transaction data.
-   - **`react-native-logs`**: Logging library for debugging and event logging within the app.
-   - **`react-native-safe-area-context`**: Ensures UI components stay within the safe area on different devices.
-   - **`react-native-screens`**: Optimizes navigation performance by managing screens efficiently.
-   - **`react-native-vector-icons`**: Offers a set of customizable icons for UI design.
-
-3. **Link Native Modules** (if required)
-
-   For React Native 0.60 and above, auto-linking should handle most cases. However, if additional steps are needed, refer to each library’s documentation.
-
-4. **Final Setup Steps**
-
-   After installation, reset the cache and start the app:
-
-   ```bash
-   npx react-native start --reset-cache
-   npx react-native run-android
-   ```
+   These libraries enable features such as navigation, SMS reading, logging, date management, and enhanced UI components.
 
 ---
 
-This setup will ensure that all necessary dependencies are correctly installed and configured for the app's features and functionality.
 
 # SMS_Reader
